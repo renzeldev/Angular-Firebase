@@ -1,0 +1,176 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Users</a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <mat-icon
+                        class="icon-size-5 text-secondary"
+                        [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
+                    <a class="ml-1 text-primary-500">Register New User</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex justify-center p-6 sm:p-10">
+
+        <div class="w-[70%]">
+
+            <form class="flex flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden" [formGroup]="formgroup">
+                <p class="text-lg font-medium">Basic user information</p>
+                <!-- <p class="text-secondary mb-6">
+                    Set your login preferences, help us personalize your experience and make big account changes here
+                </p> -->
+                <div class="flex">
+                    <mat-form-field class="flex-auto">
+                        <input
+                            matInput
+                            [placeholder]="'Email Address'"
+                            formControlName="email"
+                            >
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:mail'"></mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex flex-col gt-xs:flex-row">
+                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                        <mat-select [placeholder]="'Admin / User'" formControlName="role">
+                            <mat-option value="admin">Admin</mat-option>
+                            <mat-option value="user">User</mat-option>
+                        </mat-select>
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:shield-check'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <mat-divider class="mt-6 mb-10"></mat-divider>
+
+                <p class="text-lg font-medium">Profile</p>
+                <p class="text-secondary mb-6">
+                    People here will get to know you with this information
+                </p>
+                <div class="flex flex-col gt-xs:flex-row">
+                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                        <input
+                            matInput
+                            [placeholder]="'First name'"
+                            formControlName="firstName">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <input
+                            matInput
+                            [placeholder]="'Last name'"
+                            formControlName="lastName">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex flex-col gt-xs:flex-row">
+                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                        <mat-select [placeholder]="'Male / Female'" formControlName="gender">
+                            <mat-option value="male">Male</mat-option>
+                            <mat-option value="female">Female</mat-option>
+                        </mat-select>
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            >wc</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field class="flex-auto">
+                        <input
+                            matInput
+                            [placeholder]="'Age'"
+                            formControlName="age">
+                        <span matPrefix>27</span>
+                    </mat-form-field>
+                </div>
+
+                <!-- <mat-divider class="mt-6 mb-10"></mat-divider> -->
+
+                <!-- <p class="text-lg font-medium">Notifications</p>
+                <p class="text-secondary mb-6">
+                    We'll always let you know about important changes, but you pick what else you want to hear about.
+                </p>
+                <div class="flex flex-col gt-sm:flex-row">
+                    <div class="flex flex-col">
+                        <span class="font-semibold mb-2">By Email</span>
+                        <div class="flex flex-col">
+                            <mat-checkbox
+                                class="mb-2"
+                                [checked]="true"
+                                [color]="'primary'">
+                                Company News
+                            </mat-checkbox>
+                            <mat-checkbox
+                                class="mb-2"
+                                [color]="'primary'">
+                                Featured Products
+                            </mat-checkbox>
+                            <mat-checkbox
+                                [checked]="true"
+                                [color]="'primary'">
+                                Messages
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mt-8 gt-sm:mt-0 gt-sm:ml-16">
+                        <span class="font-semibold mb-2">Push Notifications</span>
+                        <mat-radio-group
+                            class="flex flex-col"
+                            [color]="'primary'"
+                            [value]="'just-good'">
+                            <mat-radio-button
+                                class="mb-2"
+                                [value]="'everything'">
+                                Everything
+                            </mat-radio-button>
+                            <mat-radio-button
+                                class="mb-2"
+                                [value]="'just-good'">
+                                Just the good stuff
+                            </mat-radio-button>
+                            <mat-radio-button [value]="'no-push'">
+                                No push notifications
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div> -->
+
+                <div class="flex items-center justify-end border-t -mx-8 mt-8 px-8 py-5 bg-gray-50 dark:bg-gray-700">
+                    <button mat-button>
+                        Cancel
+                    </button>
+                    <button
+                        class="px-6 ml-3"
+                        mat-flat-button
+                        [color]="'primary'"
+                        (click)="registerNewUser()">
+                        Save
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+

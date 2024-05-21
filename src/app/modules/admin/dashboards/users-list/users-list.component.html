@@ -1,0 +1,25 @@
+<div class="flex flex-col flex-auto w-full">
+
+    <div class="flex flex-wrap w-full mx-auto p-6 md:p-8">
+
+        <!-- Title and action buttons -->
+        <div class="flex items-center justify-between w-full">
+            <div>
+                <h2 class="text-3xl font-semibold tracking-tight leading-8">User lists dashboard</h2>
+                <div class="font-medium tracking-tight text-secondary">Manage and register new user</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <mat-tab-group>
+        <mat-tab label="Users List">
+            <app-users-list-table></app-users-list-table>
+        </mat-tab>
+        <mat-tab label="Register New User">
+            <app-new-user-register></app-new-user-register>
+        </mat-tab>
+    </mat-tab-group>
+
+</div>
